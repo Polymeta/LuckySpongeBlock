@@ -29,7 +29,7 @@ public class GeneralConfig
     public static class LuckyBlockConfig
     {
         @Setting(comment = "this node contains info about the appearance of the lucky block, what block it is, lore, name, etc")
-        public static ItemStackSnapshot luckyBlockItem = ItemStack.builder()
+        public ItemStackSnapshot luckyBlockItem = ItemStack.builder()
                 .itemType(ItemTypes.SPONGE)
                 .add(Keys.DISPLAY_NAME, Text.of(TextColors.RED, "Lucky Block!"))
                 .add(Keys.ITEM_LORE, Arrays.asList(Text.of(TextColors.GREEN, "place me down to get something!"), Text.of("Lore Line 2")))
@@ -39,6 +39,6 @@ public class GeneralConfig
                 .build().createSnapshot();
 
         @Setting(comment = "The commands to be executed (from console!!) when a player places down a lucky block, %p is the placeholder for the player that placed the block")
-        public static List<String> commands = Arrays.asList("say Hello %p", "give %p minecraft:diamon 1");
+        public List<String> commands = Arrays.asList("say Hello %p", "give %p minecraft:diamon 1");
     }
 }
