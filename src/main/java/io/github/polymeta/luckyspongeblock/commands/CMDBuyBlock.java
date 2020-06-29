@@ -50,7 +50,7 @@ public class CMDBuyBlock implements CommandExecutor
                 luckyBlock.setQuantity(1);
                 if(player.getInventory().offer(luckyBlock).getType() == InventoryTransactionResult.Type.SUCCESS)
                 {
-                    src.sendMessage(Text.of(TextColors.GREEN, "Successfully bought " + type + "!"));
+                    src.sendMessage(Text.of(TextColors.GREEN, "Successfully bought " + type.name + "!"));
                 }
                 else{
                     src.sendMessage(Text.of(TextColors.RED, "An error occurred while giving the luckyblocks to your inventory! Was your inventory full?"));

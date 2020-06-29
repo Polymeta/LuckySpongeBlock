@@ -15,10 +15,9 @@ import org.spongepowered.api.Sponge;
 import org.spongepowered.api.command.args.GenericArguments;
 import org.spongepowered.api.command.spec.CommandSpec;
 import org.spongepowered.api.config.DefaultConfig;
-import org.spongepowered.api.data.persistence.DataTranslators;
-import org.spongepowered.api.event.game.GameReloadEvent;
-import org.spongepowered.api.event.game.state.GameStartedServerEvent;
 import org.spongepowered.api.event.Listener;
+import org.spongepowered.api.event.game.GameReloadEvent;
+import org.spongepowered.api.event.game.state.GameInitializationEvent;
 import org.spongepowered.api.plugin.Plugin;
 import org.spongepowered.api.plugin.PluginContainer;
 import org.spongepowered.api.service.economy.EconomyService;
@@ -28,14 +27,12 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 @Plugin(id = "luckyspongeblock",
         name = "LuckySpongeBlock",
         description = "Give out LuckyBlocks for players containing pre configured items",
         authors = {"Polymeta"},
-        version = "1.0-SNAPSHOT")
+        version = "1.0")
 public class LuckySpongeBlock
 {
     private static LuckySpongeBlock instance;
@@ -57,7 +54,7 @@ public class LuckySpongeBlock
 
 
     @Listener
-    public void onServerStart(GameStartedServerEvent event)
+    public void onServerStart(GameInitializationEvent event)
     {
         logger.info("LuckySpongeBlock by Polymeta starting!");
         instance = this;
@@ -96,7 +93,7 @@ public class LuckySpongeBlock
     }
 
     @SuppressWarnings("ArraysAsListWithZeroOrOneArgument")
-    private void registerCommands()
+    public void registerCommands()
     {
         HashMap<String, GeneralConfig.LuckyBlockConfig> choices = new HashMap<>();
         config.luckyBlocks.forEach(luckyBlockConfig ->

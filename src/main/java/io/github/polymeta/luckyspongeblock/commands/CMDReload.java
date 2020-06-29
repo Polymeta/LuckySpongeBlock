@@ -2,6 +2,7 @@ package io.github.polymeta.luckyspongeblock.commands;
 
 import io.github.polymeta.luckyspongeblock.LuckySpongeBlock;
 import ninja.leaping.configurate.objectmapping.ObjectMappingException;
+import org.spongepowered.api.Sponge;
 import org.spongepowered.api.command.CommandException;
 import org.spongepowered.api.command.CommandResult;
 import org.spongepowered.api.command.CommandSource;
@@ -20,6 +21,12 @@ public class CMDReload implements CommandExecutor
         try
         {
             LuckySpongeBlock.getInstance().loadConfig();
+            //remove all mappings
+            Sponge.getCommandManager().getOwnedBy(this).forEach(Sponge.getCommandManager()::removeMapping);
+            //re-register them again
+            LuckySpongeBlock.getInstance().registerCommands();
+
+            src.sendMessage(Text.of(TextColors.GREEN, "Reloaded Config!"));
         }
         catch (IOException | ObjectMappingException e)
         {

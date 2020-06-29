@@ -41,6 +41,6 @@ public class GeneralConfig
                 .build().createSnapshot();
 
         @Setting(comment = "The commands to be executed (from console!!) when a player places down a lucky block, %p is the placeholder for the player that placed the block")
-        public List<String> commands = Arrays.asList("say Hello %p", "give %p minecraft:diamon 1");
+        public List<String> commands = Arrays.asList("say Hello %p", "give %p minecraft:diamond 1");
     }
 }

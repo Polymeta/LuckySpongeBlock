@@ -29,7 +29,7 @@ public class CMDGiveBlock implements CommandExecutor
 
         if(player.getInventory().offer(luckyBlock).getType() == InventoryTransactionResult.Type.SUCCESS)
         {
-            src.sendMessage(Text.of(TextColors.GREEN, "Successfully gave " + amount + "x " + type + (amount == 1 ? "" : "s") + " to " + player.getName() + "!"));
+            src.sendMessage(Text.of(TextColors.GREEN, "Successfully gave " + amount + "x " + type.name + (amount == 1 ? "" : "s") + " to " + player.getName() + "!"));
         }
         else{
             src.sendMessage(Text.of(TextColors.RED, "An error occurred while giving the luckyblocks to " + player.getName() + "! Was their inventory full?"));
