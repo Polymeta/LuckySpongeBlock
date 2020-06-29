@@ -20,14 +20,16 @@ import java.util.List;
 @ConfigSerializable
 public class GeneralConfig
 {
-    @Setting(comment = "If eco Plugin installed, players have the chance to buy luckyblocks for below price")
-    public int luckyBlockCost = 100;
     @Setting(comment = "A collection of Lucky Blocks and what kind of reward those will issue")
     public List<LuckyBlockConfig> luckyBlocks = Collections.singletonList(new LuckyBlockConfig());
 
     @ConfigSerializable
     public static class LuckyBlockConfig
     {
+        @Setting(comment = "Name of the luckyBlock. Will be used as command reference")
+        public String name = "TestLuckyBlock";
+        @Setting(comment = "If eco Plugin installed, players have the chance to buy luckyblocks for below price")
+        public int luckyBlockCost = 100;
         @Setting(comment = "this node contains info about the appearance of the lucky block, what block it is, lore, name, etc")
         public ItemStackSnapshot luckyBlockItem = ItemStack.builder()
                 .itemType(ItemTypes.SPONGE)
