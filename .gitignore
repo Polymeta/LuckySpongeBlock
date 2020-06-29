@@ -11,6 +11,7 @@ gradle-app.setting
 .gradletasknamecache
 
 #Forge/misc
+.idea/
 run/
 *.iml
 *.jar
