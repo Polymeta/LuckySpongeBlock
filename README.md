@@ -1,3 +1,5 @@
+![Java CI with Gradle](https://github.com/Polymeta/LuckySpongeBlock/workflows/Java%20CI%20with%20Gradle/badge.svg)
+
 # LuckySpongeBlock
 Build against SpongeAPI 7 to allow Server Owners to distribute different kinds of luckyblocks to their players!
 
