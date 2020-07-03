@@ -22,7 +22,7 @@ public class CMDReload implements CommandExecutor
         {
             LuckySpongeBlock.getInstance().loadConfig();
             //remove all mappings
-            Sponge.getCommandManager().getOwnedBy(this).forEach(Sponge.getCommandManager()::removeMapping);
+            Sponge.getCommandManager().getOwnedBy(LuckySpongeBlock.getInstance()).forEach(Sponge.getCommandManager()::removeMapping);
             //re-register them again
             LuckySpongeBlock.getInstance().registerCommands();
 

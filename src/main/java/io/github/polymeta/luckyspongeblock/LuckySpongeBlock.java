@@ -32,7 +32,7 @@ import java.util.List;
         name = "LuckySpongeBlock",
         description = "Give out LuckyBlocks for players containing pre configured items",
         authors = {"Polymeta"},
-        version = "1.0")
+        version = "1.0.1")
 public class LuckySpongeBlock
 {
     private static LuckySpongeBlock instance;
